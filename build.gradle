@@ -2,25 +2,31 @@
 
 buildscript {
     repositories {
-        jcenter()
         google()
+        mavenCentral()  //注意下这个顺序，放在jcenter()上面
+        maven { url 'https://jitpack.io' }
+        jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.1.4'
 
     }
 }
 
 allprojects {
     repositories {
-        jcenter()
-        maven {
-            url "https://jitpack.io"
-        }
         google()
+        mavenCentral()  //注意下这个顺序，放在jcenter()上面
+        maven { url 'https://jitpack.io' }
+        jcenter()
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext{
+    supportVer = "28.0.0"
+    compileSdkVer = 28
 }

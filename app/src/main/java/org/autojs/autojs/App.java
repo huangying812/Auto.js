@@ -18,6 +18,8 @@ import com.raizlabs.android.dbflow.runtime.DirectModelNotifier;
 import com.stardust.app.GlobalAppContext;
 import com.stardust.autojs.core.ui.inflater.ImageLoader;
 import com.stardust.autojs.core.ui.inflater.util.Drawables;
+import com.stardust.theme.ThemeColorManager;
+
 import org.autojs.autojs.autojs.AutoJs;
 import org.autojs.autojs.autojs.key.GlobalKeyObserver;
 import org.autojs.autojs.network.GlideApp;
@@ -25,10 +27,6 @@ import org.autojs.autojs.storage.database.TimedTaskDatabase;
 import org.autojs.autojs.timing.TimedTaskScheduler;
 import org.autojs.autojs.tool.CrashHandler;
 import org.autojs.autojs.ui.error.ErrorReportActivity;
-import com.stardust.theme.ThemeColor;
-import com.stardust.theme.ThemeColorManager;
-import com.stardust.util.UiHandler;
-
 
 import java.lang.ref.WeakReference;
 
@@ -74,7 +72,6 @@ public class App extends MultiDexApplication {
                         .modelNotifier(DirectModelNotifier.get())
                         .build())
                 .build());
-        ThemeColorManager.setDefaultThemeColor(new ThemeColor(getResources().getColor(R.color.colorPrimary), getResources().getColor(R.color.colorPrimaryDark), getResources().getColor(R.color.colorAccent)));
         ThemeColorManager.init(this);
         AutoJs.initInstance(this);
         if (Pref.isRunningVolumeControlEnabled()) {

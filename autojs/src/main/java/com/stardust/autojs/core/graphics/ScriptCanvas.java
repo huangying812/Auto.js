@@ -94,7 +94,7 @@ public class ScriptCanvas {
     }
 
     public int save(int saveFlags) {
-        return mCanvas.save(saveFlags);
+        return mCanvas.save();
     }
 
     public int saveLayer(@Nullable RectF bounds, @Nullable Paint paint, int saveFlags) {
